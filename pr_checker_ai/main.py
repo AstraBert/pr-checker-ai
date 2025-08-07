@@ -1,6 +1,7 @@
 import os
 import sys
 import asyncio
+import shlex
 
 from rich.console import Console
 from rich.markdown import Markdown
@@ -67,7 +68,9 @@ async def run() -> int:
         ores = filter_openai_response(openai_response)
         antres = filter_anthropic_response(anthropic_response)
         if (ores != "") and (antres != ""):
-            comment_html = f"# PR Review\n\n## OpenAI - {openai_model}\n\n{ores}\n\n## Anthropic - {anthropic_model}\n\n{antres}\n\n---\n\n_Automatically created by PR Checker AI💚_"
+            comment_html = shlex.quote(
+                f"# PR Review\n\n## OpenAI - {openai_model}\n\n{ores}\n\n## Anthropic - {anthropic_model}\n\n{antres}\n\n---\n\n_Automatically created by PR Checker AI💚_"
+            )
             cs.print("Submitted PR comment:", style="bold red")
             print()
             table = Table()

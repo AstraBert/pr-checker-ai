@@ -28,4 +28,4 @@ def test_fetch_pr_details(sh: Shell) -> None:
 
 def test_comment_on_pr(sh: Shell) -> None:
     res = comment_on_pr(pr_number="7", comment="hello world", shell=sh)
-    assert res == "gh pr comment 7 --body 'hello world'"
+    assert res == "gh pr comment 7 --body hello world"
