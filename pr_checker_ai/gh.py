@@ -10,5 +10,5 @@ def fetch_pr_details(pr_number: str, shell: Shell = sh) -> str:
 
 
 def comment_on_pr(pr_number: str, comment: str, shell: Shell = sh) -> str:
-    comment_url = shell.run("gh pr comment " + pr_number + " --body '" + comment + "'")
+    comment_url = shell.run("gh pr comment " + pr_number + " --body " + comment + "")
     return comment_url
