@@ -71,14 +71,14 @@ repos:
     hooks:
       - id: go-build
         name: go build
-        entry: go build ./go/...
+        entry: cd go && go build ./...
         language: system
         files: \.go$
         pass_filenames: false
 
       - id: go-test-short
         name: go test (short)
-        entry: go test -short ./go/...
+        entry: cd go && go test -short ./...
         language: system
         files: \.go$
         pass_filenames: false
