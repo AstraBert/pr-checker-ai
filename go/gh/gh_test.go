@@ -2,7 +2,7 @@ package gh
 
 import (
 	"fmt"
-	"pr-checker/shell"
+	"pr-checker-cli/shell"
 	"testing"
 )
 

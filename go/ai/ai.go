@@ -50,8 +50,8 @@ func AnthropicResponse(message string) (string, error) {
 	content := ""
 
 	for _, block := range response.Content {
-		if val, ok := any(block).(*anthropic.TextBlock); ok {
-			content += val.Text + "\n"
+		if block.Text != "" {
+			content += block.Text + "\n"
 		}
 	}
 
