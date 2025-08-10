@@ -1,13 +1,11 @@
-# PR Checker AI 💚 - Python
+# PR Checker AI 💚 - Go
 
 An intelligent pull request review tool that leverages both OpenAI and Anthropic AI models to provide comprehensive code reviews directly on your GitHub pull requests.
 
 ## Features
 
-- **Dual AI Analysis**: Get reviews from both OpenAI GPT and Anthropic Claude models for comprehensive feedback
+- **Dual AI Analysis**: Get reviews from both OpenAI GPT-5 and Anthropic Claude 4 Sonnet models for comprehensive feedback
 - **Automated PR Comments**: Automatically posts review results as comments on your GitHub pull requests
-- **Rich Console Output**: Beautiful terminal output with tables and markdown rendering
-- **Flexible Model Selection**: Choose specific models from OpenAI and Anthropic
 - **GitHub CLI Integration**: Uses GitHub CLI for seamless PR interaction
 
 ## Prerequisites
@@ -20,10 +18,10 @@ Before using PR Checker AI, ensure you have:
 
 ## Installation
 
-1. Install `pr-checker-ai`:
+1. Download the executable from the latest release on the [releases page](https://github.com/AstraBert/pr-checker-ai/releases), save it as `pr-checker-cli` and then test it with:
 
 ```bash
-pip install pr-checker-ai
+./pr-checker-cli --help
 ```
 
 2. Set up your API keys:
@@ -43,30 +41,18 @@ gh auth login
 
 ### Basic Usage
 
-Review a pull request (flag `-p`, `--pr`) using default models (`gpt-4.1` for OpenAI and `claude-sonnet-4-0` for Anthropic):
+Review a pull request using the `check` command and the `-p`, `--pr` flag:
 
 ```bash
-pr-checker-cli -p 123
-```
-
-### Advanced Usage
-
-Specify custom models for both providers using the flags:
-
-- `-o, --openai`: OpenAI model to use (default: "gpt-4.1")
-- `-a, --anthropic`: Anthropic model to use (default: "claude-sonnet-4-0")
-
-```bash
-pr-checker-cli -p 456 -o "gpt-5" -a "claude-3-7-sonnet-latest"
+./pr-checker-cli check -p 123
 ```
 
 ## How It Works
 
 1. **Fetches PR Details**: Uses GitHub CLI to collect general PR information and diff changes
-2. **AI Analysis**: Sends PR details to both OpenAI and Anthropic models for review
-3. **Processes Responses**: Filters and formats responses from both AI providers
-4. **Posts Comment**: Creates a formatted comment on the PR with both reviews
-5. **Console Output**: Displays results in a beautiful table format in your terminal
+2. **AI Analysis**: Sends PR details to both OpenAI and Anthropic models for review, in parallel
+3. **Posts Comment**: Creates a formatted comment on the PR with both reviews
+4. **Console Output**: Returns the link to the comment, as well as informs you of the progress through logs.
 
 ## Output Format
 

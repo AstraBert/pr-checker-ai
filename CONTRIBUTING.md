@@ -1,48 +1,91 @@
 # Contributing to `pr-checker-ai`
 
-Do you want to contribute to this project? Make sure to read this guidelines first :)
+Thank you for your interest in contributing to this project! Please review these guidelines before getting started.
 
-## Issue
+## Issue Reporting
 
-**When to do it**:
+> **Note:** The Python version is now community-driven and not actively maintained.
 
-- You found bugs but you don't know how to solve them or don't have time/will to do the solve
-- You want new features but you don't know how to implement them or don't have time/will to do the implementation
+### When to Report an Issue
 
-> ⚠️ _Always check open and closed issues before you submit yours to avoid duplicates_
+- You've discovered bugs but lack the knowledge or time to fix them
+- You have feature requests but cannot implement them yourself
 
-**How to do it**:
+> ⚠️ **Important:** Always search existing open and closed issues before submitting to avoid duplicates.
 
-- Open an issue
-- Give the issue a meaningful title (short but effective problem/feature request description)
-- Describe the problem/feature request
+### How to Report an Issue
 
-## Traditional contribution
+1. Open a new issue
+2. Provide a clear, concise title that describes the problem or feature request
+3. Include a detailed description of the issue or requested feature
 
-**When to do it**:
+## Code Contributions
 
-- You found bugs and corrected them
-- You optimized/improved the code
-- You added new features that you think could be useful to others
+### When to Contribute
 
-**How to do it**:
+- You've identified and fixed bugs
+- You've optimized or improved existing code
+- You've developed new features that would benefit the community
 
-1. Fork this repository
-2. Install `pre-commit` and make sure to have it within the Git Hooks for your fork:
+### How to Contribute
 
-```bash
-pip install pre-commit
-pre-commit install
-```
+#### Python Development
 
-3. Change the things you want, and make sure tests still pass or add new ones:
+> **Note:** The Python version is now community-driven and not actively maintained.
 
-```bash
-pytest tests/test_*.py
-```
+1. **Fork the repository**
 
-3. Commit your changes
-4. Make sure your changes pass the pre-commit linting/type checking, if not modify them so that they pass
-5. Submit pull request (make sure to provide a thorough description of the changes)
+2. **Set up pre-commit hooks**
 
-### Thanks for contributing!
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+3. **Make your changes and test**
+
+   ```bash
+   pytest tests/test_*.py
+   ```
+
+   Ensure existing tests pass and add new tests for your changes.
+
+4. **Commit your changes**
+
+5. **Verify pre-commit compliance**
+   Make sure your changes pass linting and type checking. Fix any issues before proceeding.
+
+6. **Submit a pull request**
+   Include a comprehensive description of your changes.
+
+#### Go Development
+
+1. **Fork the repository**
+
+2. **Set up pre-commit hooks**
+
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+3. **Make your changes and test**
+
+   ```bash
+   go build .
+   go test ./...
+   ```
+
+   Ensure the build succeeds and all tests pass. Add tests for new features.
+
+4. **Commit your changes**
+
+5. **Verify pre-commit compliance**
+   Ensure your changes pass all linting checks.
+
+6. **Submit a pull request**
+   Include a comprehensive description of your changes.
+
+---
+
+**Thank you for contributing!**
